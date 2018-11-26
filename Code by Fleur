@@ -1,0 +1,14 @@
+import pixiedust
+pixiedust.enableJobMonitor()
+# create an RDD from oos.txt where every element is a line of the file
+rdd = sc.textFile('../data/PSI_tweets.txt')
+words = rdd.flatMap(lambda line: line.split())
+#print(words.take(10))
+
+#what does everything mean?
+#1: tweet
+#2: sentiment
+#3, 4, 5, 6: value of sentiment
+#7: metadata
+#8,9,10,11: value of metadata
+#
